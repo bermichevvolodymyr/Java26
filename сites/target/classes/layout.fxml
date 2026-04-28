@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox spacing="15" alignment="CENTER_LEFT" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AppController">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <VBox spacing="10" prefWidth="250">
+        <Label text="ID (для Update/Delete):"/>
+        <TextField fx:id="tfId" promptText="Введіть ID"/>
+        
+        <Label text="Назва:"/>
+        <TextField fx:id="tfName" promptText="Введіть назву"/>
+        
+        <Label text="Широта (град):"/>
+        <TextField fx:id="tfLatitude" promptText="0.0"/>
+        
+        <Label text="Довгота (град):"/>
+        <TextField fx:id="tfLongitude" promptText="0.0"/>
+        
+        <Label text="Регіон:"/>
+        <TextField fx:id="tfRegion" promptText="Введіть регіон"/>
+        
+        <Label text="Фото:"/>
+        <TextField fx:id="tfImage" promptText="URL або шлях до фото"/>
+        
+        <HBox spacing="5" alignment="CENTER">
+            <Button text="Insert" onAction="#insertRecord"/>
+            <Button text="Update" onAction="#updateRecord"/>
+            <Button text="Delete" onAction="#deleteRecord"/>
+            <Button text="Clear" onAction="#clearFields"/>
+        </HBox>
+    </VBox>
+
+    <TableView fx:id="tvSites" prefWidth="600" prefHeight="400">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="40"/>
+            <TableColumn fx:id="colName" text="Name" prefWidth="150"/>
+            <TableColumn fx:id="colLatitude" text="Latitude" prefWidth="80"/>
+            <TableColumn fx:id="colLongitude" text="Longitude" prefWidth="80"/>
+            <TableColumn fx:id="colRegion" text="Region" prefWidth="120"/>
+            <TableColumn fx:id="colImage" text="Photo" prefWidth="120"/>
+        </columns>
+    </TableView>
+</HBox>
